@@ -19,7 +19,7 @@ html {
   --color-primary-2: #06b6d4;
   --color-primary-gradient: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
 
-  --color-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  --color-shadow: 0 10px 30px rgba(2, 6, 23, 0.2);
 
   --font-body: 'Roboto', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
@@ -32,7 +32,7 @@ html {
     --color-muted: #94a3b8;
     --color-border: #23314d;
 
-    --color-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --color-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   }
 }
 
