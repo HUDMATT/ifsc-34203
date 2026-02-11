@@ -1,0 +1,33 @@
+/* Base Style */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Global Color Variables */
+:root {
+    color-scheme: light dark;
+
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #475569;
+    --color-border: #e2e8f0;
+
+    --color-primary: #4f46e5;
+    --color-primary-2: #06b6d4;
+
+    --color-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0b1220;
+        --color-surface: #111b2e;
+        --color-text: #e5e7eb;
+        --color-muted: #94a3b8;
+        --color-border: #23314d;
+
+        --color-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+}
