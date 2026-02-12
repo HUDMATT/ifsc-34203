@@ -117,20 +117,31 @@ nav {
   margin-top: 0.25rem;
 }
 #github-link {
-  background-image: url("../img/github-icon.svg");
+  background-image: url("../img/github-light-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 #linkin-link {
-  background-image: url("../img/linkedin-icon.svg");
+  background-image: url("../img/linkedin-light-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 #course-page-link {
-  background-image: url("../img/course-icon.svg");
+  background-image: url("../img/course-light-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+@media (prefers-color-scheme: dark) {
+  #github-link {
+    background-image: url("../img/github-dark-icon.svg");
+  }
+  #linkin-link {
+    background-image: url("../img/linkedin-dark-icon.svg");
+  }
+  #course-page-link {
+    background-image: url("../img/course-dark-icon.svg");
+  }
 }
