@@ -1,0 +1,51 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+
+main {
+    /*background-image: url("../img/grid.png");*/
+    width:90vw;
+    margin: 1.5625% auto;
+    border: 1px solid #000;
+}
+
+header.primary, footer.primary {
+    background: rgba(0, 0, 0, 0.1);
+    /*width: 1240px;*/
+    width: 96.875%;
+    margin: 1.5625%;
+    padding: 1.5625%;
+    float: left;
+}
+
+#blog {
+    background: rgba(0, 0, 0, 0.1);
+    /*width: 715px;*/
+    width: 55.859375%;
+    margin-left: 1.5625%;
+    padding: 1.5625%;
+    float: left;
+}
+
+#secondary {
+    background: rgba(0, 0, 0, 0.1);
+    /*width: 505px;*/
+    width: 39.453125%;
+    margin-left: 1.5625%;
+    padding: 1.5625%;
+    float: left;
+}
