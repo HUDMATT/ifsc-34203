@@ -46,6 +46,16 @@ html {
   white-space: nowrap;
   overflow: hidden;
 }
+
+/*-------------------- Main Grid --------------------*/
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  min-height: 100vh;
+}
+
 /*-------------------- Body Style --------------------*/
 body {
   background-color: var(--color-bg);
@@ -61,15 +71,14 @@ body {
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--color-shadow);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem;
+  grid-column: 1/13;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
 }
 .header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  grid-column: 1/5;
   margin-left: 1rem;
 }
 .primary-header h1,
@@ -99,7 +108,10 @@ nav {
 
 /* Header Nav Styles */
 .header-links-container {
-  padding: 0;
+  grid-column: 12/13;
+  grid-row: 1/2;
+
+  place-content: center;
 }
 .header-links-container ul {
   list-style: none;
@@ -114,7 +126,6 @@ nav {
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
-  margin-top: 0.25rem;
 }
 #github-link {
   background-image: url("../img/github-light-icon.svg");
@@ -144,4 +155,26 @@ nav {
   #course-page-link {
     background-image: url("../img/course-dark-icon.svg");
   }
+}
+
+/* Assignment Links Nav Styles */
+#assignment-links {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+/* Footer Styles */
+.primary-footer {
+  background: var(--color-primary-gradient);
+  color: light-dark(var(--color-bg), white);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow);
+
+  grid-column: 1/13;
+  grid-row: 3/4;
+}
+#copyright {
+  margin: 0.01rem;
+  padding-left: 1rem;
+  font-family: var(--font-heading);
 }
