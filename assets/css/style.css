@@ -51,7 +51,7 @@ html {
 main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   gap: 1rem;
   min-height: 100vh;
 }
@@ -160,10 +160,18 @@ nav {
 /* Assignment Links Nav Styles */
 #assignment-links {
   grid-column: 1/4;
-  grid-row: 2/3;
+  grid-row: 2;
+}
+#lab-links {
+  grid-column: 1/4;
+  grid-row: 3;
+}
+#lab-links h3 {
+  margin-left: .75rem;
+  margin-bottom: -.75rem;
 }
 
-/* Footer Styles */
+/*-------------- Footer Styles --------------------*/
 .primary-footer {
   background: var(--color-primary-gradient);
   color: light-dark(var(--color-bg), white);
@@ -171,7 +179,7 @@ nav {
   box-shadow: var(--color-shadow);
 
   grid-column: 1/13;
-  grid-row: 3/4;
+  grid-row: 4;
 }
 #copyright {
   margin: 0.01rem;
