@@ -78,7 +78,7 @@ body {
   grid-template-rows: subgrid;
 }
 .header-container {
-  grid-column: 1/5;
+  grid-column: 1/11;
   margin-left: 1rem;
 }
 .primary-header h1,
@@ -159,16 +159,16 @@ nav {
 
 /* Assignment Links Nav Styles */
 #assignment-links {
-  grid-column: 1/4;
+  grid-column: 1/-1;
   grid-row: 2;
 }
 #lab-links {
-  grid-column: 1/4;
+  grid-column: 1/-1;
   grid-row: 3;
 }
 #lab-links h3 {
-  margin-left: .75rem;
-  margin-bottom: -.75rem;
+  margin-left: 0.75rem;
+  margin-bottom: -0.75rem;
 }
 
 /*-------------- Footer Styles --------------------*/
@@ -185,4 +185,34 @@ nav {
   margin: 0.01rem;
   padding-left: 1rem;
   font-family: var(--font-heading);
+}
+
+/*-------------------- Media Queries --------------------*/
+@media (max-width: 640px) {
+  .primary-header {
+    grid-template-columns: subgrid;
+  }
+  .primary-header h1 {
+    font-size: 5vw;
+  }
+  .primary-header .subtitle {
+    font-size: 3vw;
+  }
+  .header-container {
+    grid-column: 1/8;
+    grid-row: 1;
+    margin-left: 0.5rem;
+  }
+  .header-links-container {
+    grid-column: 9/-1;
+    grid-row: 1;
+    place-content: center;
+    padding-left: 1rem;
+  }
+  .header-links-container a {
+    width: 5vw;
+  }
+  .primary-footer p {
+    font-size: 2.5vw;
+  }
 }
