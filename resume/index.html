@@ -1,0 +1,177 @@
+<header class="container" id="top">
+  <!-- Main navigation -->
+  <nav class="primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main -->
+<main itemscope itemtype="https://schema.org/Person" class="container">
+  <h1 class="page-title" itemprop="name">Hudson Matthews</h1>
+
+  <section id="about">
+    <h2>Personal Details</h2>
+
+    <div class="bio">
+      <img itemprop="image" src="./assets/img/headshot.jpg" alt="Hudson Matthews">
+      <p itemprop="description">
+        Aspiring Cybersecurity Specialist intended to graduate with a bachelor's in Cybersecurity in May of 2026. Has extensive experience in the service industry, leading to great management and teamwork skills. Great with computers and has coding experience with C++, JavaScript, and Python, as well as experience with digital forensics and security control management. I have had an internship at Southwest Power Pool as a software developer, where I gained valuable experience in the industry, focusing mostly on reworking and updating internal tools used by the IT Markets team. In my time at UALR, I have gained valuable experience in cybersecurity through projects and labs focused on threat modeling, network security, and digital forensics. My work with tools such as FTK Imager and Autopsy, along with in-depth studies of NIST CSRC standards, has solidified my knowledge of key security controls and system vulnerabilities.
+      </p>
+    </div>
+
+    <dl class="details">
+      <dt>Name</dt>
+      <dd itemprop="name">
+        <span itemprop="givenName">Hudson</span> <span itemprop="familyName">Matthews</span>
+      </dd>
+
+      <dt>Date of birth</dt>
+      <dd><time itemprop="birthDate" datetime="2000-10-16">10/16/2000</time></dd>
+
+      <dt>Nationality</dt>
+      <dd itemprop="nationality">United States</dd>
+
+      <dt>Location</dt>
+      <!-- Keep original text, but model as Place for better schema correctness -->
+      <dd itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Arkansas</span>
+      </dd>
+
+      <dt>Telephone</dt>
+      <dd>
+        <!-- tel: should be digits; keep visible text as-is -->
+        <a itemprop="telephone" href="tel:5012517388">501.251.7388</a>
+      </dd>
+
+      <dt>Email</dt>
+      <dd>
+        <a itemprop="email" href="mailto:hjmatthews@ualr.edu">hjmatthews@ualr.edu</a>
+      </dd>
+
+      <dt>Address</dt>
+      <dd itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">1608 Shumate Dr</span>
+        <span itemprop="addressLocality">Little Rock</span>
+        <span itemprop="postalCode">72212</span>
+        <span itemprop="addressCountry">USA</span>
+      </dd>
+    </dl>
+
+    <ul class="related-links">
+      <li><a itemprop="sameAs" rel="me" href="https://github.com/HUDMATT"> github</a></li>
+      <li><a itemprop="sameAs" rel="me" href="https://www.linkedin.com/in/hudson-matthews-976551324/">linkedin</a></li>
+      <li><a itemprop="url" href="./assets/docs/Resume (Old) - Hudson_Matthews.pdf" download>pdf resume</a></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li class="skill" itemprop="knowsAbout">Information Security</li>
+      <li class="skill" itemprop="knowsAbout">Python (Programming Language)</li>
+      <li class="skill" itemprop="knowsAbout">Javascript</li>
+      <li class="skill" itemprop="knowsAbout">Web Design</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <!-- current job -->
+    <article class="job">
+      <!-- jobTitle is valid on Person; this is still within Person scope -->
+      <h3 itemprop="jobTitle">Customer Service Manager</h3>
+
+      <!-- worksFor is valid on Person -->
+      <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Jim's Razorback Pizza</span>
+        <span>Aug 2018 - Present</span>
+
+        <p itemprop="description">Deals with hundreds of customers every day, offering excellent service, as well as managing both front of house and back of house in the restaurant.</p>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="https://www.jimsrazorbackpizzalittlerock.com/">Jims Razorback Pizza's Website</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">16101 Cantrell Rd #109, Little Rock, AR 72223</span>
+          </span>
+        </span>
+      </div>
+    </article>
+
+    <!-- Previous Jobs -->
+    <article class="job">
+      <h3 itemprop="jobTitle">IT Markets Intern</h3>
+
+      <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Southwest Power Pool</span>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="https://www.spp.org/">Southwest Power Pool's Website</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">201 Worthen Dr, Little Rock, AR 72223</span>
+          </span>
+        </span>
+      </span>
+
+      <!-- Keep original visible date format; Google won't bind it perfectly, but it won't warn -->
+      <div>
+        <span>May 2025</span> -
+        <span>Aug 2025</span>
+      </div>
+
+      <p itemprop="description">As an intern on the IT Markets team at Southwest Power Pool, I have been deeply involved in the inner workings of the Markets Operations System, reworking an internal tool from .NET into React in an Electron based desktop application, as well as enhancing various other web-based internal tools.</p>
+    </article>
+
+    <article class="job">
+      <h3 itemprop="jobTitle">Bartender</h3>
+
+      <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Red Door Restaraunt</span>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="https://www.reddoorrestaurant.net/">Red Door Restaurant's Website</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">3701 Cantrell Rd, Little Rock, AR 72202</span>
+          </span>
+        </span>
+      </span>
+
+      <div>
+        <span>Feb 2022</span> -
+        <span>March 2023</span>
+      </div>
+
+      <p itemprop="description">Tended bar, provided great customer service for hundreds of customers a day. Created multiple drinks that have stayed on the menu at the restaurant to this day.</p>
+    </article>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <article class="certificate" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+      <h3 itemprop="description"><abbr title="Associate of Applied Science">AAS</abbr> Technology & Engineering</h3>
+      <span itemprop="name">University of Arkansas - Pulaski Technical College</span>
+      <span itemprop="location" itemscope>Little Rock, AR</span>
+      <span>2022-2024</span>
+    </article>
+
+    <article class="certificate" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+      <h3 itemprop="description"><abbr title="Bachelor of Applied Science">BASc</abbr> Cybersecurity</h3>
+      <span itemprop="name">University of Arkansas at Little Rock</span>
+      <span itemprop="location" itemscope>Little Rock, AR</span>
+      <span>2024-2026</span>
+    </article>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div id="copyright">
+    &copy; 2026 Hudson Matthews | <a href="#top">Top</a>
+  </div>
+</footer>
+ 
