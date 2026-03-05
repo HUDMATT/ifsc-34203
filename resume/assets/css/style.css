@@ -212,7 +212,7 @@ nav a:visited {
   border: var(--color-border) 2px solid;
 }
 dl {
-  font-size:.9rem;
+  font-size:.8rem;
   display: grid;
   grid-template: repeat(8, 2.5rem) / 8em 1fr;
 }
@@ -225,7 +225,7 @@ dt {
   border-bottom: 1px solid var(--color-border);
 }
 dd {
-  margin: 0;
+  margin-left: -1rem;
   grid-column: 2;
   padding: 10px 0;
   border-bottom: 1px solid var(--color-border);
