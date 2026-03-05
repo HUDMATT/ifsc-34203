@@ -1,0 +1,314 @@
+/*-------------------- Base Style --------------------*/
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*-------------------- Global Color and Font Variables --------------------*/
+:root {
+  --color-bg: #efe5d6;
+  --color-surface: #f6eee2;
+  --color-text: #273328;
+  --color-muted: #6d725f;
+  --color-border: #cfc1ac;
+
+  --color-primary: #1f5a3f;
+  --color-primary-2: #133b2a;
+  --color-primary-gradient: linear-gradient(90deg, #1f5a3f 0%, #133b2a 100%);
+
+  --color-shadow: 0 10px 30px rgba(31, 45, 36, 0.15);
+
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+}
+
+/*--------------------- Helper Classes --------------------*/
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+/*-------------------- Main Grid --------------------*/
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  min-height: 100vh;
+}
+
+/*-------------------- Body Style --------------------*/
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  margin: auto;
+  max-width: 450px; /* only for mobile currently */
+
+}
+
+/*-------------------- Default Grid Spacing --------------------*/
+.page-title {
+  grid-column: 1 / 13;
+  grid-row: 1;
+}
+#about {
+  grid-column: 1 / 13;
+  grid-row: 2;
+}
+#skills {
+  grid-column: 1 / 13;
+  grid-row: 3;
+}
+#experience {
+  grid-column: 1 / 13;
+  grid-row: 4;
+}
+#education {
+  grid-column: 1 / 13;
+  grid-row: 5;
+}
+footer {
+  grid-column: 1 / 13;
+  grid-row: 6;
+}
+
+/*-------------------- Nav Styles --------------------*/
+nav ul,
+.related-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+nav li,
+.related-links li {
+  list-style: none;
+}
+nav a,
+.related-links a {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  position: relative;
+}
+nav a::after,
+.related-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 0%;
+  height: 0.125rem;
+  transition: width 0.3s ease;
+}
+nav a::after {
+  background: var(--color-primary);
+}
+.related-links a::after {
+  background: var(--color-text);
+}
+nav a:hover::after,
+nav a:active::after,
+.related-links a:hover::after,
+.related-links a:active::after {
+  width: 100%;
+}
+a:link,
+a:visited {
+  color: var(--color-text);
+}
+nav a:link,
+nav a:visited {
+  color: var(--color-primary);
+}
+
+/*-------------------- Title Styles --------------------*/
+.page-title,
+#skills h2,
+#experience h2,
+#education h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--color-primary);
+}
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+#skills h2,
+#experience h2,
+#education h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.page-title:before,
+.page-title:after,
+#skills h2:before,
+#skills h2:after,
+#experience h2:before,
+#experience h2:after,
+#education h2:before,
+#education h2:after {
+  content: "";
+  height: 2px;
+  background: var(--color-primary);
+}
+.page-title:before,
+.page-title:after,
+#skills h2:before,
+#skills h2:after {
+      width: 8rem;
+}
+#experience h2:before,
+#experience h2:after,
+#education h2:before,
+#education h2:after {
+      width: 6rem;
+}
+.page-title:before,
+#skills h2:before,
+#experience h2:before,
+#education h2:before {
+  margin-right: 1rem;
+}
+.page-title:after,
+#skills h2:after,
+#experience h2:after,
+#education h2:after {
+  margin-left: 1rem;
+}
+
+/*-------------------- About Styles --------------------*/
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.bio {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  border: var(--color-border) 2px solid;
+}
+dl {
+  font-size:.9rem;
+  display: grid;
+  grid-template: repeat(8, 2.5rem) / 8em 1fr;
+}
+
+dt {
+  font-weight: 800;
+  font-family: var(--font-heading);
+  grid-column: 1;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+dd {
+  margin: 0;
+  grid-column: 2;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.related-links a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.related-links {
+   border-bottom: 1px solid var(--color-border);
+}
+img {
+  max-width: 90%;
+  height: auto;
+  border: var(--color-border) 3px solid;
+  border-radius: 10%;
+}
+
+/*-------------------- Skills Styles --------------------*/
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+#skills ul {
+  margin-top: -1rem;
+  margin-left: -6.5rem;
+}
+
+/*-------------------- Experience Styles --------------------*/
+#experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.job {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+.job *[itemprop="jobTitle"] {
+    color: var(--color-primary-2);
+}
+.job *[itemprop="jobTitle"],
+.job *[itemprop="name"],
+.job *[itemprop="url"],
+.job *[itemprop="addressLocality"] {
+  display: block;
+}
+
+/*-------------------- Education Styles --------------------*/
+#education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.certificate {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+#education h3 {
+  color: var(--color-primary-2);
+}
+
+/*-------------------- Footer Styles --------------------*/
+footer {
+    background: var(--color-primary-gradient);
+    border-top: 1px solid var(--color-border);
+    box-shadow: var(--color-shadow);
+    color: var(--color-bg);
+}
+#copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#copyright a:link,
+#copyright a:visited {
+  color: var(--color-bg);
+}
