@@ -240,6 +240,7 @@ dd {
 img {
   max-width: 90%;
   height: auto;
+  aspect-ratio: attr(width) / attr(height); /* was stretching on mobile */
   border: var(--color-border) 3px solid;
   border-radius: 10%;
 }
