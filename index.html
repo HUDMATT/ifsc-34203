@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,6 +24,7 @@
     <meta name="theme-color" content="#1F5A3F" />
   </head>
   <body>
+    <script src="assets/js/script.js" defer></script>
     <main class="container">
       <header class="primary-header">
         <div class="header-container">
@@ -147,8 +148,17 @@
         </div>
       </section>
       <footer class="primary-footer">
-        <p id="copyright">&copy; 2026 Hudson Matthews</p>
-        <a id="top-link" href="#top">Back to Top</a>
+        <p id="copyright">&copy; 2026 Hudson Matthews |</p>
+        <a id="top-link" href="#top">Top</a>
+        <p id="theme-toggle-label">Theme:</p>
+        <button
+          type="button"
+          id="theme-toggle"
+          data-theme-toggle
+          aria-label="Change to light theme"
+          title="Change to light theme"
+        >
+        </button>
       </footer>
     </main>
   </body>
