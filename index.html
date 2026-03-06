@@ -35,84 +35,120 @@
             <li>
               <a
                 id="github-link"
-                class="sr-only"
                 target="_blank"
                 title="Hudson's GitHub"
                 href="https://github.com/HUDMATT"
-                >Hudson's GitHub</a
+                ><span class="sr-only">Hudson's GitHub</span></a
               >
             </li>
             <li>
               <a
                 id="linkin-link"
-                class="sr-only"
                 target="_blank"
                 title="Hudson's LinkedIn"
                 href="https://www.linkedin.com/in/hudson-matthews-976551324/"
-                >Hudson's LinkedIn</a
+                ><span class="sr-only">Hudson's LinkedIn</span></a
               >
             </li>
             <li>
               <a
                 id="course-page-link"
-                class="sr-only"
                 target="_blank"
                 title="IFSC-34203 Course Page"
                 href="https://thomaswallace.net/course/mobile-web/spring-2026/"
-                >IFSC-34203 Course Page</a
+                ><span class="sr-only">IFSC-34203 Course Page</span></a
               >
             </li>
           </ul>
         </nav>
       </header>
-      <nav id="assignment-links">
-        <h2>Assignment Links</h2>
-        <ul>
-          <li>
-            <a target="_blank" href="pre-assessment/index.html"
-              >Pre-Assessment</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="html5-refactor/index.html"
-              >HTML5 Refactor</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="flex-grid/index.html">Flexible Grid</a>
-          </li>
-          <li><a target="_blank" href="css-grid/index.html">CSS Grid</a></li>
-          <li><a target="_blank" href="resume/index.html">Resume</a></li>
-        </ul>
-      </nav>
-      <nav id="lab-links">
-        <h2>Lab Links</h2>
-        <h3>CSS Grid Labs</h3>
-        <ul>
-          <li>
-            <a target="_blank" href="css-grid-lab/grid-two-col-left.html"
-              >Two Column Left</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="css-grid-lab/grid-two-col-right.html"
-              >Two Column Right</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="css-grid-lab/grid-two-col-stacked.html"
-              >Two Column Stacked</a
-            >
-          </li>
-          <li>
-            <a target="_blank" href="css-grid-lab/grid-two-col-equal.html"
-              >Two Column Equal</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <section id="assignment-links">
+        <h2>Assignments</h2>
+        <div class="card-grid">
+          <a
+            class="assignment-card"
+            href="pre-assessment/index.html"
+            target="_blank"
+          >
+            <h3>Pre-Assessment</h3>
+            <p class="assignment-description">Baseline skills evaluation</p>
+            <p class="status">Status: Completed</p>
+            <p class="date-submitted">Submitted: 01/22/2026</p>
+          </a>
+          <a
+            class="assignment-card"
+            href="html5-refactor/index.html"
+            target="_blank"
+          >
+            <h3>HTML5 Refactor</h3>
+            <p class="assignment-description">
+              Refactoring older HTML markup to HTML 5
+            </p>
+            <p class="status">Status: Completed</p>
+            <p class="date-submitted">Submitted: 02/03/2026</p>
+          </a>
+          <a
+            class="assignment-card"
+            href="flex-grid/index.html"
+            target="_blank"
+          >
+            <h3>Flexible Grid</h3>
+            <p class="assignment-description">CSS layout using flexbox</p>
+            <p class="status">Status: Completed</p>
+            <p class="date-submitted">Submitted: 02/12/2026</p>
+          </a>
+          <a class="assignment-card" href="css-grid/index.html" target="_blank">
+            <h3>CSS Grid</h3>
+            <p class="assignment-description">CSS layout using CSS grid</p>
+            <p class="status">Status: Completed</p>
+            <p class="date-submitted">Submitted: 02/17/2026</p>
+          </a>
+          <a class="assignment-card" href="resume/index.html" target="_blank">
+            <h3>Resume</h3>
+            <p class="assignment-description">Responsive resume design</p>
+            <p class="status">Status: WIP</p>
+            <p class="date-submitted">Submitted: 03/05/2026</p>
+          </a>
+        </div>
+      </section>
+      <section id="lab-links">
+        <h2>Labs</h2>
+        <div class="card-grid-labs">
+          <div class="lab-card">
+            <h3>CSS Grid Labs</h3>
+            <ul>
+              <li>
+                <a target="_blank" href="css-grid-lab/grid-two-col-left.html"
+                  >Two Column Left</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="css-grid-lab/grid-two-col-right.html"
+                  >Two Column Right</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="css-grid-lab/grid-two-col-stacked.html"
+                  >Two Column Stacked</a
+                >
+              </li>
+              <li>
+                <a target="_blank" href="css-grid-lab/grid-two-col-equal.html"
+                  >Two Column Equal</a
+                >
+              </li>
+            </ul>
+            <p class="lab-description">
+              Practice exercises for CSS Grid layout
+            </p>
+            <p class="status">Status: Completed</p>
+            <p class="date-submitted">Submitted: 02/19/2026</p>
+          </div>
+        </div>
+      </section>
       <footer class="primary-footer">
         <p id="copyright">&copy; 2026 Hudson Matthews</p>
+        <a id="top-link" href="#top">Back to Top</a>
       </footer>
     </main>
   </body>
