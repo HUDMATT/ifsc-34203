@@ -3,6 +3,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
 /*-------------------- Global Color and Font Variables --------------------*/
@@ -12,6 +13,7 @@ html {
   --color-text: #273328;
   --color-muted: #6d725f;
   --color-border: #cfc1ac;
+  --color-hover: #c0ae95;
 
   --color-primary: #1f5a3f;
   --color-primary-2: #133b2a;
@@ -26,7 +28,6 @@ html {
 /*--------------------- Helper Classes --------------------*/
 .sr-only {
   border: 0;
-  clip: rect(0 0 0 0);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -51,8 +52,6 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   margin: auto;
-  max-width: 450px; /* only for mobile currently */
-
 }
 
 /*-------------------- Default Grid Spacing --------------------*/
@@ -115,7 +114,7 @@ nav a::after {
   background: var(--color-primary);
 }
 .related-links a::after {
-  background: var(--color-text);
+  background: var(--color-primary-2);
 }
 nav a:hover::after,
 nav a:active::after,
@@ -171,13 +170,13 @@ nav a:visited {
 .page-title:after,
 #skills h2:before,
 #skills h2:after {
-      width: 8rem;
+  width: 8rem;
 }
 #experience h2:before,
 #experience h2:after,
 #education h2:before,
 #education h2:after {
-      width: 6rem;
+  width: 6rem;
 }
 .page-title:before,
 #skills h2:before,
@@ -192,29 +191,64 @@ nav a:visited {
   margin-left: 1rem;
 }
 
+/*-------------------- Card Styles --------------------*/
+.bio,
+.bio p,
+.details,
+.job,
+.certificate,
+#skills ul {
+  border-radius: 20px;
+  background-color: var(--color-surface);
+  border: var(--color-border) 2px solid;
+  gap: 1rem;
+  padding: 1rem;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+.bio:hover,
+.details:hover,
+.job:hover,
+.certificate:hover,
+#skills ul:hover,
+#about:target .bio,
+#about:target .details,
+#skills:target > ul,
+#experience:target .job,
+#education:target .certificate {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  border-color: var(--color-hover);
+}
+
 /*-------------------- About Styles --------------------*/
 #about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
   gap: 1rem;
+  align-items: center;
   padding: 1rem;
 }
 .bio {
   width: 90%;
+  grid-column: 1 / 13;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  border-radius: 20px;
-  background-color: var(--color-surface);
-  border: var(--color-border) 2px solid;
 }
 dl {
-  font-size:.8rem;
+  grid-column: 1 / 13;
+  grid-row: 2;
+  font-size: 0.8rem;
   display: grid;
-  grid-template: repeat(8, 2.5rem) / 8em 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
 }
 
 dt {
@@ -226,43 +260,54 @@ dt {
 }
 dd {
   margin-left: -1rem;
-  grid-column: 2;
+  grid-column: 2 / 4;
   padding: 10px 0;
   border-bottom: 1px solid var(--color-border);
 }
 .related-links a {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--color-primary-2);
 }
 .related-links {
-   border-bottom: 1px solid var(--color-border);
+  grid-column: 1 / 13;
+  border-bottom: 1px solid var(--color-border);
 }
 img {
-  max-width: 90%;
+  display: block;
+  width: 100%;
   height: auto;
-  aspect-ratio: attr(width) / attr(height); /* was stretching on mobile */
   border: var(--color-border) 3px solid;
-  border-radius: 10%;
+  border-radius: 20px;
 }
 
 /*-------------------- Skills Styles --------------------*/
 #skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
   padding: 1rem;
+  justify-self: center;
 }
 #skills ul {
-  margin-top: -1rem;
-  margin-left: -6.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+.skill {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  background: var(--color-bg);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
 }
 
 /*-------------------- Experience Styles --------------------*/
 #experience {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
   padding: 1rem;
 }
@@ -271,7 +316,7 @@ img {
   padding-bottom: 1rem;
 }
 .job *[itemprop="jobTitle"] {
-    color: var(--color-primary-2);
+  color: var(--color-primary-2);
 }
 .job *[itemprop="jobTitle"],
 .job *[itemprop="name"],
@@ -284,7 +329,7 @@ img {
 #education {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
   padding: 1rem;
 }
@@ -298,10 +343,10 @@ img {
 
 /*-------------------- Footer Styles --------------------*/
 footer {
-    background: var(--color-primary-gradient);
-    border-top: 1px solid var(--color-border);
-    box-shadow: var(--color-shadow);
-    color: var(--color-bg);
+  background: var(--color-primary-gradient);
+  border-top: 1px solid var(--color-border);
+  box-shadow: var(--color-shadow);
+  color: var(--color-bg);
 }
 #copyright {
   display: flex;
@@ -312,4 +357,100 @@ footer {
 #copyright a:link,
 #copyright a:visited {
   color: var(--color-bg);
+}
+
+/*--------------------- Media Queries ---------------------*/
+@media (min-width: 768px) {
+  /* md */
+  .bio {
+    grid-column: 1 / 8;
+    grid-row: 1 / 4;
+  }
+  .details {
+    font-size: 0.9rem;
+    grid-column: 8 / 13;
+    grid-row: 1;
+    row-gap: 2rem;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  .related-links {
+    grid-column: 8 / 13;
+    grid-row: 3;
+  }
+  .page-title:before,
+  .page-title:after,
+  #skills h2:before,
+  #skills h2:after {
+    width: 12rem;
+  }
+  #experience h2:before,
+  #experience h2:after,
+  #education h2:before,
+  #education h2:after {
+    width: 10rem;
+  }
+}
+@media (max-width: 811px) {
+  /*related links overlap fix in between md and lg*/
+  .related-links a {
+    font-size: 0.9rem;
+  }
+  .details {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg */
+  main {
+    gap: 1.5rem;
+  }
+  #about {
+    grid-template-rows: auto auto 1fr auto;
+    grid-column: 1 / 6;
+    grid-row: 2 / 5;
+    align-content: start;
+  }
+  #skills {
+    grid-column: 6 / 13;
+    grid-row: 3;
+  }
+  #experience {
+    grid-column: 6 / 13;
+    grid-row: 2;
+  }
+  #education {
+    grid-column: 6 / 13;
+    grid-row: 4;
+  }
+  .bio {
+    grid-column: 1/13;
+    grid-row: 1;
+  }
+  .details {
+    width: 90%;
+    grid-column: 1/13;
+    grid-row: 2;
+  }
+  .related-links {
+    grid-column: 1/13;
+    grid-row: 4;
+  }
+  .page-title:before,
+  .page-title:after {
+    width: 20rem;
+  }
+}
+@media (min-width: 2000px) {
+  /* 2xl (skills was making it look pretty rough on ultrawide so I have this, still rough, but better)*/ 
+  #skills ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #skills {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
