@@ -42,7 +42,7 @@ html[data-theme="dark"] {
   --color-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
-/*-------------------- Accessibility Utility Classes --------------------*/
+/*-------------------- Helper Classes --------------------*/
 .sr-only {
   border: 0;
   height: 1px;
@@ -52,6 +52,9 @@ html[data-theme="dark"] {
   position: absolute;
   width: 1px;
   white-space: nowrap;
+}
+.spacer {
+  min-height: 7.5rem;
 }
 
 /*-------------------- Main Grid --------------------*/
