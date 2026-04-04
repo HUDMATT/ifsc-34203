@@ -115,7 +115,29 @@ h6,
   background: linear-gradient(to left, var(--bs-body-bg), transparent);
 }
 
-
+.services-scroll-wrapper {
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent)
+}
+.services-scroll {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+.service-item {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
+.repair-card img {
+  max-width: 50%;
+  height: auto;
+}
+.spacer {
+  flex: 0 0 5rem;
+  pointer-events: none;
+}
 /*---------------------- SVG Style -----------------*/
 .brand-svg {
   color: var(--bs-secondary);
@@ -154,18 +176,10 @@ h6,
   .navbar-logo-text {
     font-size: 0.875rem;
   }
-  .copyright {
-    font-size: 0.1rem;
-  }
 }
 @media (min-width: 576px){
   .navbar-logo-text {
     font-size: 1rem;
-  }
-}
-@media (max-width: 768px){
-  .copyright {
-    font-size: 0.75rem;
   }
 }
 @media (min-width: 992px){
@@ -192,4 +206,9 @@ h6,
   .navbar-logo-text {
     font-size: 1.25rem;
   }
+}
+@media (pointer: coarse) {
+  .services-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
 }
