@@ -1,0 +1,195 @@
+/*----------------------- Global Color Vars (overriding BS vars) -------------------*/
+:root {
+  --bs-body-bg: #f8fafc;
+  --bs-secondary-bg: #f1f5f9;
+
+  --bs-light: #f9fafb;
+
+  --bs-border-color: #e5e7eb;
+  --color-muted: #9ca3af;
+
+  --bs-body-color: #0f172a;
+  --bs-secondary-color: #475569;
+
+  --bs-primary: #0d6efd;
+  --color-primary-hover: #0b5ed7;
+
+  --bs-secondary: #1e3a8a;
+  --bs-secondary-rgb: 30, 58, 138;
+  --color-secondary-hover: #0b2572;
+
+  --bs-dark-subtle: #9fa6b2;
+  --bs-dark-subtle-rgb: 159, 166, 178;
+}
+
+/*---------------------- Nav Bar Style -----------------*/
+.nav-link,
+.learn-more-link {
+  position: relative;
+  text-decoration: none;
+}
+.nav-link::after,
+.learn-more-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 0%;
+  height: 0.125rem;
+  transition: width 0.3s ease;
+  background: currentColor;
+}
+.nav-link:hover::after,
+.nav-link:active::after,
+.learn-more-link:hover::after,
+.learn-more-link:active::after {
+  width: 100%;
+}
+.learn-more-link {
+  transition: color 0.2s ease;
+  color: var(--bs-secondary);
+}
+.learn-more-link:hover,
+.learn-more-link:active {
+  color: var(--color-secondary-hover);
+}
+
+/*---------------------- Header Style -----------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-logo-text {
+  font-family: "Oswald", sans-serif;
+}
+
+/*---------------------- Video Style -----------------*/
+#hero-vid {
+  width: 100%;
+  height: auto;
+}
+#about-vid {
+  width: 100%;
+  height: auto;
+}
+
+/*---------------------- Card Style -----------------*/
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  border-color: var(--color-muted);
+}
+.review-card {
+  max-width: 350px;
+  min-height: 425px;
+  margin: 0 auto;
+}
+.carousel-inner {
+  overflow: visible;
+}
+/* Had AI help me with this, still learning animations and carousels, so I wanted to add a fade effect on the edges of the carousel to make it look nicer */
+.review-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+.review-carousel-wrapper::before,
+.review-carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.review-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bs-body-bg), transparent);
+}
+.review-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bs-body-bg), transparent);
+}
+
+
+/*---------------------- SVG Style -----------------*/
+.brand-svg {
+  color: var(--bs-secondary);
+  transition: color 0.2s ease;
+  max-height: 75px;
+}
+.brand-svg:hover {
+  color: var(--color-secondary-hover);
+}
+
+/*---------------------- Button Style -----------------*/
+.review-carousel-btn {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+.review-carousel-btn:hover {
+  color: var(--color-secondary-hover);
+}
+.submit-btn {
+  background-color: var(--bs-secondary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+.submit-btn:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+/*---------------------- Media Queries -----------------*/
+@media (max-width: 576px) {
+  .navbar-logo-text {
+    font-size: 0.875rem;
+  }
+  .copyright {
+    font-size: 0.1rem;
+  }
+}
+@media (min-width: 576px){
+  .navbar-logo-text {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px){
+  .copyright {
+    font-size: 0.75rem;
+  }
+}
+@media (min-width: 992px){
+  .navbar-logo-text {
+    font-size: .77rem;
+  }
+  .icon-btn::after {
+    display: none;
+  }
+  .icon-btn {
+    color: var(--bs-primary);
+    transition: color 0.2s ease;
+  }
+  .icon-btn:hover {
+    color: var(--color-primary-hover);
+  }
+  #hero-vid {
+    height: 600px;
+    object-fit: cover;
+    object-position: 50% 25%;
+  }
+}
+@media (min-width: 1200px){
+  .navbar-logo-text {
+    font-size: 1.25rem;
+  }
+}
