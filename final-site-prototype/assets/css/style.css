@@ -119,7 +119,13 @@ h6,
   overflow-x: auto;
   padding-bottom: 10px;
   scroll-snap-type: x mandatory;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent)
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
 .services-scroll {
   display: flex;
@@ -176,15 +182,33 @@ h6,
   .navbar-logo-text {
     font-size: 0.875rem;
   }
-}
-@media (min-width: 576px){
+  .navbar-brand img {
+    width: 30px;
+  }
+  #main-header img {
+    width: 45px;
+  }
+  .review-card {
+    max-width: 275px;
+    min-height: 425px;
+  }
+  .review-card p {
+    font-size: 0.875rem;
+  }
+  .review-card h5 {
+    font-size: 1rem;
+  }
+  .review-card a {
+    font-size: 1rem;}
+  }
+@media (min-width: 576px) {
   .navbar-logo-text {
     font-size: 1rem;
   }
 }
-@media (min-width: 992px){
+@media (min-width: 992px) {
   .navbar-logo-text {
-    font-size: .77rem;
+    font-size: 0.77rem;
   }
   .icon-btn::after {
     display: none;
@@ -202,13 +226,13 @@ h6,
     object-position: 50% 25%;
   }
 }
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
   .navbar-logo-text {
     font-size: 1.25rem;
   }
 }
 @media (pointer: coarse) {
   .services-scroll-wrapper::-webkit-scrollbar {
-  display: none;
-}
+    display: none;
+  }
 }
