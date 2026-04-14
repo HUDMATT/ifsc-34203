@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Hudson Matthews" />
+    <meta name="description" content="Responsive Images" />
+    <title>Responsive Images</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" href="../icon.svg" type="image/svg+xml" />
+
+    <meta name="theme-color" content="#1F5A3F" />
+  </head>
+  <body>
+    <header><h1>Responsive Images</h1></header>
+    <div class="image-container">
+    <img src="./assets/img/earthset-artemis-ii-400.jpg"
+      srcset="./assets/img/earthset-artemis-ii-400.jpg 400w,
+              ./assets/img/earthset-artemis-ii-600.jpg 600w,
+              ./assets/img/earthset-artemis-ii-1000.jpg 1000w,
+              ./assets/img/earthset-artemis-ii-2000.jpg 2000w,
+              ./assets/img/earthset-artemis-ii-3000.jpg 3000w"
+      alt="Earth from Moon Orbit"
+    />
+    <img src="./assets/img/earth-from-artemis-ii-day-2-400.jpg"
+      srcset="./assets/img/earth-from-artemis-ii-day-2-400.jpg 400w,
+              ./assets/img/earth-from-artemis-ii-day-2-600.jpg 600w,
+              ./assets/img/earth-from-artemis-ii-day-2-1000.jpg 1000w,
+              ./assets/img/earth-from-artemis-ii-day-2-2000.jpg 2000w,
+              ./assets/img/earth-from-artemis-ii-day-2-3000.jpg 3000w"
+      alt="Earth from Far Orbit"
+    />
+    <img src="./assets/img/artemis-ii-crew-hug-400.webp"
+      srcset="./assets/img/artemis-ii-crew-hug-400.webp 400w,
+              ./assets/img/artemis-ii-crew-hug-600.webp 600w,
+              ./assets/img/artemis-ii-crew-hug-1000.webp 1000w,
+              ./assets/img/artemis-ii-crew-hug-2000.webp 2000w,
+              ./assets/img/artemis-ii-crew-hug-3000.webp 3000w"
+      alt="Artemis II Crew Hugging"
+    />
+    </div>
+    <footer>
+      <div id="copyright">
+        &copy; 2026 Hudson Matthews | <a href="#top">Top</a>
+      </div>
+    </footer>
+  </body>
+</html>
