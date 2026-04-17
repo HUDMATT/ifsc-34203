@@ -43,7 +43,7 @@ header {
 
 .vid-card {
   justify-self: center;
-  width: 50%;
+  width: 90%;
   border-radius: 20px;
   background-color: var(--color-surface);
   border: var(--color-border) 2px solid;
@@ -78,4 +78,16 @@ footer {
 #copyright a:link,
 #copyright a:visited {
   color: var(--color-bg);
+}
+
+
+@media (min-width: 768px) {
+  .vid-card {
+    width: 70%;
+  }
+}
+@media (min-width: 1024px) {
+  .vid-card {
+    width: 50%;
+  }
 }
