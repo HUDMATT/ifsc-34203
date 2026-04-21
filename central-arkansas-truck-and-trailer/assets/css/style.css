@@ -1,33 +1,384 @@
 /*------------------------ GLOBALS ---------------------*/
+:root {
+  --color-body-bg: #f8fafc;
+  --color-secondary-bg: #f1f5f9;
 
+  --color-light: #f9fafb;
+
+  --color-border-color: #e5e7eb;
+  --color-muted: #9ca3af;
+
+  --color-body-color: #0f172a;
+  --color-secondary-color: #475569;
+
+  --color-primary: #0d6efd;
+  --color-primary-hover: #0b5ed7;
+
+  --color-secondary: #1e3a8a;
+  --color-secondary-hover: #0b2572;
+
+  --color-dark-subtle: #9fa6b2;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+* {
+  box-sizing: border-box;
+}
+.icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
 /*Global container sizing*/
 .container {
-    width:100%;
-    grid-template-columns: repeat(12, 1fr);
-    padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 1rem;
+  margin-inline: auto;
 }
-@media (min-width: 576px){
-    .container{
-        max-width: 576px;
-    }
+@media (min-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
 }
-@media (min-width: 768px){
-    .container{
-        max-width: 768px;
-    }
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
-@media (min-width: 992px){
-    .container{
-        max-width: 992px;
-    }
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
 }
-@media (min-width: 1200px){
-    .container{
-        max-width: 1200px;
-    }
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
-@media (min-width: 1200px){
-    .container{
-        max-width: 1400px;
-    }
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+body {
+  background-color: var(--color-body-bg);
+  color: var(--color-body-color);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/*---------------------- HEADER -----------------*/
+#site-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid var(--color-border-color);
+  box-shadow: var(--shadow-sm);
+}
+#header-content-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 0.75rem;
+}
+#main-nav a,
+#main-nav button,
+#service-btn,
+.brand {
+  font-size: 0.875rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+.brand-logo {
+  width: 45px;
+  height: auto;
+  display: block;
+}
+.brand-text {
+  white-space: nowrap;
+}
+
+.desktop-text {
+  display: none;
+}
+
+.mobile-text {
+  display: none;
+}
+#service-btn {
+  margin-left: auto;
+}
+.menu-toggle {
+  display: inline-flex;
+  background: none;
+  border: 1px solid var(--color-border-color);
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+.main-nav {
+  width: 100%;
+  margin-left: 0;
+  padding-top: 0.75rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+.main-nav.open {
+  max-height: 1200px;
+  opacity: 1;
+  visibility: visible;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0 0;
+  background: white;
+  border-top: 1px solid var(--color-border-color);
+}
+.nav-list > li {
+  position: relative;
+  width: 100%;
+}
+.nav-list a,
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.9rem 0;
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font: inherit;
+}
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.phone-icon {
+  display: none;
+}
+.phone-mobile {
+  display: inline;
+}
+.dropdown-menu {
+  position: static;
+  min-width: unset;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.5rem 1rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: /*had AI help with the transitions here*/
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+.dropdown-menu li {
+  width: 100%;
+}
+.dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0;
+  color: var(--color-secondary);
+  white-space: normal;
+}
+.has-dropdown.open > .dropdown-menu {
+  max-height: 1000px;
+  opacity: 1;
+  visibility: visible;
+}
+@media (min-width: 413px) {
+  .mobile-text {
+    display: inline;
+  }
+}
+@media (min-width: 768px) {
+  #main-nav a,
+  #main-nav button,
+  #service-btn,
+  .brand {
+    font-size: 1rem;
+  }
+}
+/*---------------------- DESKTOP NAVIGATION -----------------*/
+@media (min-width: 992px) {
+  #header-content-container {
+    flex-wrap: nowrap;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  #service-btn {
+    margin-left: 0;
+  }
+  .main-nav {
+    display: block;
+    width: auto;
+    margin-left: auto;
+    padding-top: 0;
+    overflow: visible;
+    max-height: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  #main-nav a,
+  #main-nav button {
+    font-size: 0.875rem;
+  }
+  .main-nav {
+    display: block;
+    width: auto;
+    margin-left: auto;
+    padding-top: 0;
+  }
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    width: auto;
+    background: transparent;
+    border-top: none;
+    padding: 0;
+  }
+  .nav-list > li {
+    width: auto;
+  }
+  .nav-list a,
+  .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    padding: 0;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    min-width: 260px;
+    background: white;
+    border: 1px solid var(--color-border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+    pointer-events: none;
+  }
+  .has-dropdown.open > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .dropdown-menu a {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
+  .phone-mobile {
+    display: none;
+  }
+  .phone-icon {
+    display: inline;
+  }
+}
+@media (min-width: 1200px) {
+  #main-nav a,
+  #main-nav button {
+    font-size: 1rem;
+  }
+  .mobile-text {
+    display: none;
+  }
+  .desktop-text {
+    display: inline;
+  }
+}
+
+/*---------------------- BUTTONS & LINKS ------------------*/
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/*pretty messy, but scoping this right sucked and I wanted to avoid adding extra classes in the HTML*/
+.nav-list > li > a,
+.nav-list > li > .dropdown-toggle,
+.phone-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-list > li > a::after,
+.nav-list > li > .dropdown-toggle::after,
+.phone-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0;
+  height: 0.125rem;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--color-primary);
+}
+.nav-list > li > a:hover::after,
+.nav-list > li > .dropdown-toggle:hover::after,
+.phone-link:hover::after,
+.nav-list > li > a:focus-visible::after,
+.nav-list > li > .dropdown-toggle:focus-visible::after,
+.phone-link:focus-visible::after,
+.has-dropdown.open > .dropdown-toggle::after {
+  width: 100%;
 }
