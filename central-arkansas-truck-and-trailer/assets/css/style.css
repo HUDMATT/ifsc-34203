@@ -222,6 +222,29 @@ section {
   transform: translateY(-1px);
 }
 
+.repair-card {
+  border: var(--color-secondary) 2px solid;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.repair-icon {
+  max-width: 50%;
+  height: auto;
+  color: var(--color-secondary);
+  margin-left: auto;
+  margin-right: auto;
+}
+.line-divider {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: var(--color-secondary) 2px solid;
+}
+.repair-card .card-text {
+  margin-top: auto;
+}
+
 /*---------------------- MAIN HEADER -----------------*/
 #site-header {
   position: sticky;
@@ -510,7 +533,7 @@ section {
 .section-header p {
   color: var(--color-light);
   text-align: center;
-  margin-left: 1rem
+  margin-left: 1rem;
 }
 #hero-section-header p {
   display: none;
@@ -676,16 +699,16 @@ section {
 }
 
 /*---------------------- TRUCKS SECTION ------------------*/
-#trucks-content-container{
+#trucks-content-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
-#links-container{
+#links-container {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(12,1fr);
+  grid-template-columns: repeat(12, 1fr);
 }
-.brand-link{
+.brand-link {
   grid-column: span 6;
   display: flex;
   justify-content: center;
@@ -698,22 +721,79 @@ section {
   height: 90px;
   width: auto;
   color: var(--color-secondary);
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 .brand-logo:hover {
   color: var(--color-secondary-hover);
   transform: scale(1.05);
 }
 @media (min-width: 992px) {
-  #links-container{
-  grid-column: 1 / 6;
+  #links-container {
+    grid-column: 1 / 6;
+  }
+  #trucks-content-container img {
+    grid-column: 7 / 13;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
-#trucks-content-container img {
-  grid-column: 7 / 13;
+
+/*------------------------ REPAIRS SECTION ------------------------------*/
+#repairs-content-container {
+  display: grid;
+}
+#repairs-text,
+#repair-scroll-mask,
+#repair-scroll-wrapper {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+#repair-scroll-mask {
+  overflow: hidden;
+}
+#repair-scroll-wrapper {
+  grid-column: 1 / -1;
+  min-width: 0;
   width: 100%;
-  border-radius: 20px;
-  box-shadow: var(--shadow-lg);
-  margin-top: auto;
-  margin-bottom: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
+#repair-scroll {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+.repair-item {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+#repair-spacer {
+  flex: 0 0 5rem;
+  pointer-events: none;
+}
+@media (min-width: 992px) {
+  #repair-scroll-wrapper {
+    scroll-snap-type: none;
+  }
+}
+@media (pointer: coarse) {
+  .services-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 }

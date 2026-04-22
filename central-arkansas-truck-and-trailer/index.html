@@ -73,7 +73,7 @@
 <body>
   <!--------------------- MAIN HEADER ------------------->
   <header id="site-header">
-    <container class="container" id="header-content-container">
+    <div class="container" id="header-content-container">
       <a href="#top" class="brand">
         <img src="./assets/img/CATTLogo.png" alt="Central Arkansas Truck and Trailer Logo" class="main-logo">
         <span class="brand-text desktop-text">Central Arkansas Truck & Trailer</span>
@@ -160,21 +160,21 @@
           </li>
         </ul>
       </nav>
-    </container>
+    </div>
   </header>
 
   <!--------------------- HERO SECTION --------------------->
   <section id="hero-section">
     <header id="hero-section-header" class="section-header">
-      <container id="hero-header-container">
+      <div id="hero-header-container">
         <img src="./assets/img/CATTLogo.png" alt="Central Arkansas Truck and Trailer Logo">
         <div>
           <h2>Central Arkansas Truck & Trailer</h2>
           <p>Heavy Duty Truck Repair in Little Rock, AR</p>
         </div>
-      </container>
+      </div>
     </header>
-    <container class="container" id="hero-content-container">
+    <div class="container" id="hero-content-container">
       <h1 class="mobile-only">Diesel Repair You Can Count On</h1>
       <video autoplay muted loop id="hero-video">
         <source src="./assets/video/Heavy Duty Truck Repair in Little Rock AR Central Arkansas Truck.mp4"
@@ -200,7 +200,7 @@
           <a href="./company/contact-us.html" class="btn-primary">Request Service</a>
         </div>
       </div>
-    </container>
+    </div>
   </section>
 
   <!--------------------- SERVICES SECTION --------------------->
@@ -208,7 +208,7 @@
     <header class="section-header" id="services-header">
       <h2>Services</h2>
     </header>
-    <container class="container" id="services-content-container">
+    <div class="container" id="services-content-container">
       <article class="card">
         <img class="card-img-top" src="./assets/img/GeneralDieselRepair.avif" alt="General Diesel Repair">
         <div class="card-body">
@@ -302,11 +302,11 @@
           <a href="./services/trailer-repair.html" class="btn btn-primary">Learn More</a>
         </div>
       </article>
-    </container>
+    </div>
     <header class="section-header" id="fleet-services-header">
       <h2>Fleet Services</h2>
     </header>
-    <container class="container" id="fleet-services-content-container">
+    <div class="container" id="fleet-services-content-container">
       <article id="fleet-services-text">
         <h1>Fleet Services in Little Rock, AR</h1>
         <p>
@@ -315,28 +315,28 @@
           Little Rock, AR, help you stay ahead, manage expenses, and keep drivers productive.
         </p>
         <div id="fleet-services-buttons">
-        <a href="tel:501-568-2185" class="btn-primary">
-          <svg class="icon">
-            <use href="assets/img/icons.svg#icon-phone"></use>
-          </svg>
-          501-568-2185</a>        
-        <a href="./company/contact-us.html" class="btn-primary">Request Service</a>
+          <a href="tel:501-568-2185" class="btn-primary">
+            <svg class="icon">
+              <use href="assets/img/icons.svg#icon-phone"></use>
+            </svg>
+            501-568-2185</a>
+          <a href="./company/contact-us.html" class="btn-primary">Request Service</a>
         </div>
         <a href="./services/fleet-services.html" class="learn-more-link">Learn More</a>
       </article>
       <img src="./assets/img/FleetServices.avif" alt="Fleet Services in Little Rock, AR" class="desktop-only">
-    </container>
+    </div>
   </section>
 
   <!----------------------------------------- TRUCKS SECTION -------------------------------------------->
   <section id="trucks-section">
     <header id="trucks-section-header" class="section-header">
-      <container id="trucks-header-container">
-          <h2>Trucks & Equipment We Service</h2>
-          <p>From fleet vehicles to owner-operators, we've got you covered</p>
-      </container>
+      <div id="trucks-header-container">
+        <h2>Trucks & Equipment We Service</h2>
+        <p>From fleet vehicles to owner-operators, we've got you covered</p>
+      </div>
     </header>
-    <container class="container" id="trucks-content-container">
+    <div class="container" id="trucks-content-container">
       <div id="links-container">
         <a href="./trucks/mack-repair.html" class="brand-link">
           <svg class="brand-logo" aria-label="Mack Logo">
@@ -390,6 +390,209 @@
         </a>
       </div>
       <img src="./assets/img/Brands.webp" class="desktop-only" aria-label="Truck in Service Bay">
-    </container>
+    </div>
+  </section>
+
+  <!----------------------------- REPAIRS SECTIONS -------------------------------------->
+  <section id="repairs-section">
+    <header class="section-header" id="repairs-header">
+      <h2>Repairs</h2>
+    </header>
+    <div class="container" id="repairs-content-container">
+      <div id="repairs-text">
+        <h3>Repair Services Built Around Real-World Demands in Little Rock, AR</h3>
+        <p>Mechanical systems rarely fail suddenly; worn parts stress other
+          components. A
+          thorough repair fixes the root cause of the issue and prevents future downtime.</p>
+      </div>
+      <div id="repair-scroll-mask">
+        <div id="repair-scroll-wrapper">
+          <div id="repair-scroll">
+            <div id="repair-spacer"></div>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/engine-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Engine Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-engine-repair"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Engine Repair, Rebuild, Overhaul, & Conversion</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/diagnostics-electrical-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Electrical System Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-diagnostics-electrical"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Diagnostics & Electrical Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/axle-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Axle Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-axle"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Axle Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/transmission-clutch-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Clutch Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-transmission"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Transmission & Clutch Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/driveline-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Driveline Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-driveline"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Driveline Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/coolant-system-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Coolant System Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-coolant-systems"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Coolant System Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/collision-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Repair Icon">
+                  <use href="./assets/img/repair-icons.svg#repair"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Collision Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/exhaust-system-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Exhaust Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-exhaust"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Exhaust System Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/hvac-system-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="HVAC Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-hvac"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">HVAC System Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/brake-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Brakes Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-brakes"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Brake Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/oil-fluid.html">
+                <svg class="card-img-top repair-icon" aria-label="Oil and Fluid Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-oil"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Oil & Fluid</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/turbocharger-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Turbo Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-electrical"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Turbocharger Repair & Replacement</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/fuel-system-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Fuel Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-express-lube"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Fuel System Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/ecm-tuning.html">
+                <svg class="card-img-top repair-icon" aria-label="ECM Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-ecm"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">ECM Tuning</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/axle-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Wheel Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-alignment"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Wheel Alignment</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/egr-edf-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="EGR Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-egr-edf"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">EGR & EDF Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/suspension-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Suspension Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-suspension"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Suspension Repair</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <article class="repair-item">
+              <a class="card repair-card" href="./repairs/axle-repair.html">
+                <svg class="card-img-top repair-icon" aria-label="Axle Icon">
+                  <use href="./assets/img/repair-icons.svg#repair-axle"></use>
+                </svg>
+                <div class="line-divider"></div>
+                <h6 class="card-title">Engine Repair, Rebuild, Overhaul, & Conversion</h6>
+                <h6 class="card-text">Learn More</h6>
+              </a>
+            </article>
+            <div id="repair-spacer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </body>
