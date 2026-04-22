@@ -91,6 +91,132 @@ section {
     display: block;
   }
 }
+
+
+/*---------------------- BUTTONS & LINKS ------------------*/
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+}
+
+/*pretty messy, but scoping this right sucked and I wanted to avoid adding extra classes in the HTML*/
+.learn-more-link,
+.nav-list > li > a,
+.nav-list > li > .dropdown-toggle,
+.phone-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.learn-more-link::after,
+.nav-list > li > a::after,
+.nav-list > li > .dropdown-toggle::after,
+.phone-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0;
+  height: 0.125rem;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--color-primary);
+}
+.learn-more-link:hover::after,
+.nav-list > li > a:hover::after,
+.nav-list > li > .dropdown-toggle:hover::after,
+.phone-link:hover::after,
+.nav-list > li > a:focus-visible::after,
+.nav-list > li > .dropdown-toggle:focus-visible::after,
+.phone-link:focus-visible::after,
+.has-dropdown.open > .dropdown-toggle::after {
+  width: 100%;
+}
+
+/*---------------------- CARDS ------------------*/
+.card {
+  border: 1px solid var(--color-border-color);
+  border-radius: 0.75rem;
+  background-color: var(--color-secondary-bg);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+  image-rendering: smooth;
+}
+.card:hover .card-img-top {
+  filter: brightness(1);
+}
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+.card-text {
+  font-size: 0.9rem;
+  color: var(--color-secondary-color);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.card .btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: all 0.25s ease;
+}
+.card .btn-primary {
+  background-color: var(--color-primary);
+  border: none;
+}
+.card .btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
 /*---------------------- MAIN HEADER -----------------*/
 #site-header {
   position: sticky;
@@ -98,6 +224,7 @@ section {
   background-color: white;
   border-bottom: 1px solid var(--color-border-color);
   box-shadow: var(--shadow-lg);
+  z-index: 1000;
 }
 #header-content-container {
   display: flex;
@@ -360,56 +487,6 @@ section {
   }
 }
 
-/*---------------------- BUTTONS & LINKS ------------------*/
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-primary);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.75rem 1rem;
-  border-radius: 10px;
-  transition: background-color 0.2s ease;
-}
-.btn-primary:hover {
-  background-color: var(--color-primary-hover);
-}
-
-/*pretty messy, but scoping this right sucked and I wanted to avoid adding extra classes in the HTML*/
-.nav-list > li > a,
-.nav-list > li > .dropdown-toggle,
-.phone-link {
-  position: relative;
-  transition: color 0.2s ease;
-}
-.nav-list > li > a::after,
-.nav-list > li > .dropdown-toggle::after,
-.phone-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.3rem;
-  width: 0;
-  height: 0.125rem;
-  background-color: currentColor;
-  transition: width 0.3s ease;
-}
-.nav-list a:hover,
-.nav-list a:focus-visible {
-  color: var(--color-primary);
-}
-.nav-list > li > a:hover::after,
-.nav-list > li > .dropdown-toggle:hover::after,
-.phone-link:hover::after,
-.nav-list > li > a:focus-visible::after,
-.nav-list > li > .dropdown-toggle:focus-visible::after,
-.phone-link:focus-visible::after,
-.has-dropdown.open > .dropdown-toggle::after {
-  width: 100%;
-}
-
 /*---------------------- SECTION HEADERS ------------------*/
 #hero-section {
   padding: 0;
@@ -508,6 +585,8 @@ section {
     height:650px;
     object-fit: cover;
     object-position: 50% 25%;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
   #hero-text {
     grid-column: 6 / 13;
@@ -528,5 +607,61 @@ section {
   #hero-text #text-container {
     margin: 0;
     margin-bottom: 1rem;
+  }
+}
+
+/*---------------------- SERVICES SECTION ------------------*/ 
+#services-content-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+#fleet-services-content-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+#fleet-services-text {
+  text-align: center;
+  grid-column: 1 / 13;
+}
+#fleet-services-text p {
+  color: var(--color-secondary-color);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+#fleet-services-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+#fleet-services-buttons .icon {
+  margin-right: 0.5rem;
+}
+#fleet-services-content-container .learn-more-link {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+@media (min-width: 992px) {
+  #services-content-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #fleet-services-text {
+    grid-column: 1 / 7;
+    text-align: left;
+  }
+  #fleet-services-buttons {
+    justify-content: flex-start;
+  }
+  #fleet-services-content-container img {
+    grid-column: 8 / 13;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
   }
 }
