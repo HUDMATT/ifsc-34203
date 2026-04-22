@@ -1,7 +1,7 @@
 /*------------------------ GLOBALS ---------------------*/
 :root {
-  --color-body-bg: #dadcdd;
-  --color-secondary-bg: #f1f5f9;
+  --color-body-bg: #f1f5f9;
+  --color-secondary-bg: #dadcdd;
 
   --color-light: #f9fafb;
 
@@ -160,7 +160,7 @@ section {
 .card {
   border: 1px solid var(--color-border-color);
   border-radius: 0.75rem;
-  background-color: var(--color-secondary-bg);
+  background-color: var(--color-light);
   display: flex;
   flex-direction: column;
   height: 100%;
