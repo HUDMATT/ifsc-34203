@@ -92,7 +92,6 @@ section {
   }
 }
 
-
 /*---------------------- BUTTONS & LINKS ------------------*/
 .btn-primary {
   display: inline-flex;
@@ -165,7 +164,9 @@ section {
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .card:hover {
   transform: translateY(-6px);
@@ -582,7 +583,7 @@ section {
 @media (min-width: 992px) {
   #hero-video {
     grid-column: 1 / 5;
-    height:650px;
+    height: 650px;
     object-fit: cover;
     object-position: 50% 25%;
     margin-bottom: 2rem;
@@ -610,7 +611,7 @@ section {
   }
 }
 
-/*---------------------- SERVICES SECTION ------------------*/ 
+/*---------------------- SERVICES SECTION ------------------*/
 #services-content-container {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -663,5 +664,6 @@ section {
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
+    box-shadow: var(--shadow-lg);
   }
 }
