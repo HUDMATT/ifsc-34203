@@ -112,7 +112,7 @@
 }
 .info-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.75rem;
   margin-top: 1.5rem;
 }

@@ -111,6 +111,7 @@
 }
 .article-card .card-title {
   margin-top: 1rem;
+  font-size: 0.875rem;
 }
 .article-item {
   flex: 0 0 300px;
@@ -129,6 +130,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   color: var(--color-body-color);
+  font-size: 0.75rem;
 }
 #article-spacer {
   flex: 0 0 100px;
@@ -180,4 +182,12 @@
 }
 .review-link-wrapper {
   align-self: center;
+}
+@media (min-width: 576px) {
+  .article-card .card-title {
+    font-size: 1.1rem;
+  }
+  .article-item p {
+    font-size: 1rem;
+  }
 }
