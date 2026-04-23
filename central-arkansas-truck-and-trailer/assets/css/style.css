@@ -237,8 +237,20 @@ section {
   width: 96px;
   height: 96px;
   color: var(--color-secondary);
+  fill: currentColor;
   margin-left: auto;
   margin-right: auto;
+}
+/*please work :(((*/
+.repair-icon path,
+.repair-icon circle,
+.repair-icon ellipse,
+.repair-icon rect,
+.repair-icon polygon,
+.repair-icon polyline,
+.repair-icon line,
+.repair-icon g {
+  fill: currentColor;
 }
 .line-divider {
   width: 75%;

@@ -35,6 +35,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     Array.from(symbolElement.childNodes).forEach((childNode) => {
       svgElement.appendChild(document.importNode(childNode, true));
     });
+
+    svgElement.style.fill = "currentColor";
+    svgElement.style.stroke = "currentColor";
+
+    svgElement
+      .querySelectorAll("path, circle, ellipse, rect, polygon, polyline, line, g")
+      .forEach((shapeElement) => {
+        if (!shapeElement.hasAttribute("fill")) {
+          shapeElement.setAttribute("fill", "currentColor");
+        }
+
+        if (
+          shapeElement.hasAttribute("stroke") &&
+          shapeElement.getAttribute("stroke") !== "none"
+        ) {
+          shapeElement.setAttribute("stroke", "currentColor");
+        }
+      });
   }
 
   async function inlineExternalSvgSprites() {
