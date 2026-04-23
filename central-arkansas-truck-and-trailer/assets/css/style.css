@@ -232,9 +232,10 @@ section {
 }
 .repair-icon {
   display: block;
-  width: 100%;
-  max-width: 50%;
-  height: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 96px;
+  height: 96px;
   color: var(--color-secondary);
   margin-left: auto;
   margin-right: auto;
