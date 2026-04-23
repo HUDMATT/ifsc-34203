@@ -1,0 +1,55 @@
+/*---------------------- SECTION HEADERS ------------------*/
+#hero-section {
+  padding: 0;
+}
+.section-header {
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+.section-header h2,
+.section-header p {
+  color: var(--color-light);
+  text-align: center;
+  margin-left: 1rem;
+}
+#hero-section-header h2,
+#hero-section-header p {
+  margin-left: 0;
+  font-size: 1rem;
+}
+#hero-section-header p {
+  display: none;
+}
+#hero-header-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#hero-header-container img {
+  width: 75px;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .section-header {
+    flex-direction: row;
+    padding: 0.5rem;
+  }
+  .section-header h2,
+  .section-header p {
+    text-align: left;
+  }
+  #hero-section-header p {
+    display: block;
+    margin-top: -0.5rem;
+  }
+  #hero-section-header h2 {
+    margin-left: 0;
+    font-size: 1.25rem;
+  }
+}

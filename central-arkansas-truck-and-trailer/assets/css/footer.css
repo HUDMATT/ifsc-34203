@@ -1,0 +1,86 @@
+/*------------------------------- FOOTER -------------------------*/
+.footer {
+  background: var(--color-secondary);
+  color: white;
+  padding-top: 2rem;
+}
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid white;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  font-family: "Oswald", sans-serif;
+}
+.footer-brand img {
+  width: 45px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.footer-col h3 {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: underline;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col li {
+  margin-bottom: 0.4rem;
+}
+.footer-link {
+  color: white;
+}
+.footer-contact {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+.footer-contact h5 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-muted);
+  padding-bottom: 0.5rem;
+  color: var(--color-body-color);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.contact-grid h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-body-color)
+}
+.contact-grid p {
+  color: var(--color-secondary-color);
+}
+.footer-copy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+@media (min-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

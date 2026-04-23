@@ -1,0 +1,183 @@
+/*---------------------- CARDS ------------------*/
+.card {
+  border: 1px solid var(--color-border-color);
+  border-radius: 0.75rem;
+  background-color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+  image-rendering: smooth;
+}
+.card:hover .card-img-top {
+  filter: brightness(1);
+}
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-title {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+.card-text {
+  margin-top: 0;
+  font-size: 0.9rem;
+  color: var(--color-secondary-color);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.card .btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: all 0.25s ease;
+}
+.card .btn-primary {
+  background-color: var(--color-primary);
+  border: none;
+}
+.card .btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.repair-card {
+  border: var(--color-secondary) 2px solid;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.repair-icon {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 96px;
+  height: 96px;
+  color: var(--color-secondary);
+  fill: currentColor;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*please work :(((*/
+.repair-icon path,
+.repair-icon circle,
+.repair-icon ellipse,
+.repair-icon rect,
+.repair-icon polygon,
+.repair-icon polyline,
+.repair-icon line,
+.repair-icon g {
+  fill: currentColor;
+}
+.line-divider {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: var(--color-secondary) 2px solid;
+}
+.repair-card .card-text {
+  margin-top: auto;
+}
+
+.article-card {
+  background-color: var(--color-dark-subtle);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: none;
+}
+.article-card .card-title {
+  margin-top: 1rem;
+}
+.article-item {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  padding-bottom: 1rem;
+}
+.article-item h6 {
+  text-align: center;
+}
+.article-item h3 {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+.article-item p {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: var(--color-body-color);
+}
+#article-spacer {
+  flex: 0 0 100px;
+  pointer-events: none;
+}
+.article-item .line-divider {
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+.review-card {
+  max-width: 325px;
+  min-height: 375px;
+  background: var(--color-dark-subtle);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+.stars svg {
+  width: 20px;
+  height: 20px;
+}
+.review-text {
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.review-author h4 {
+  color: var(--color-body-color);
+}
+.review-author svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -0.5rem;
+}
+.review-link-wrapper {
+  align-self: center;
+}
