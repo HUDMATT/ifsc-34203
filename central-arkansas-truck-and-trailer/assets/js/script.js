@@ -190,3 +190,61 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 });
+
+/*--------------------------------------- REVIEW CAROUSEL LOGIC ------------------------------*/
+/*AI helped me alot here */
+const slides = document.querySelectorAll(".review-slide");
+const prevBtn = document.getElementById("prevReview");
+const nextBtn = document.getElementById("nextReview");
+
+let current = 0;
+let isAnimating = false;
+
+function goToSlide(newIndex, direction) {
+  if (isAnimating || newIndex === current) return;
+  isAnimating = true;
+
+  const currentSlide = slides[current];
+  const nextSlide = slides[newIndex];
+
+  slides.forEach(slide => {
+    slide.classList.remove(
+      "active",
+      "exit-left",
+      "exit-right",
+      "enter-left",
+      "enter-right"
+    );
+  });
+
+  if (direction === "next") {
+    nextSlide.classList.add("enter-right");
+  } else {
+    nextSlide.classList.add("enter-left");
+  }
+
+  nextSlide.offsetHeight;
+
+  currentSlide.classList.add(
+    direction === "next" ? "exit-left" : "exit-right"
+  );
+
+  nextSlide.classList.remove("enter-left", "enter-right");
+  nextSlide.classList.add("active");
+
+  current = newIndex;
+
+  setTimeout(() => {
+    isAnimating = false;
+  }, 450);
+}
+
+nextBtn.addEventListener("click", () => {
+  const nextIndex = (current + 1) % slides.length;
+  goToSlide(nextIndex, "next");
+});
+
+prevBtn.addEventListener("click", () => {
+  const prevIndex = (current - 1 + slides.length) % slides.length;
+  goToSlide(prevIndex, "prev");
+});
