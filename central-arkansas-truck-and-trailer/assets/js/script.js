@@ -22,11 +22,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function inlineSymbolIntoSvg(svgElement, symbolElement) {
-    const symbolViewBox = symbolElement.getAttribute("viewBox");
+    Array.from(symbolElement.attributes).forEach((attribute) => {
+      if (attribute.name === "id") {
+        return;
+      }
 
-    if (symbolViewBox) {
-      svgElement.setAttribute("viewBox", symbolViewBox);
-    }
+      svgElement.setAttribute(attribute.name, attribute.value);
+    });
 
     svgElement.innerHTML = "";
 
