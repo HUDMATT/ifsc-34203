@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       svgElement.appendChild(document.importNode(childNode, true));
     });
 
-    if (svgElement.classList.contains("repair-icon")) {
+    if (
+      svgElement.classList.contains("repair-icon") ||
+      svgElement.classList.contains("info-hero-repair-sprite")
+    ) {
       svgElement.style.fill = "currentColor";
 
       svgElement
@@ -196,9 +199,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 const slides = document.querySelectorAll(".review-slide");
 const prevBtn = document.getElementById("prevReview");
 const nextBtn = document.getElementById("nextReview");
+const carousel = document.querySelector(".review-carousel-wrapper");
 
 let current = 0;
 let isAnimating = false;
+
+let touchStartX = 0;
+let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+
+const swipeThreshold = 50;
 
 function goToSlide(newIndex, direction) {
   if (isAnimating || newIndex === current) return;
@@ -207,7 +218,7 @@ function goToSlide(newIndex, direction) {
   const currentSlide = slides[current];
   const nextSlide = slides[newIndex];
 
-  slides.forEach(slide => {
+  slides.forEach((slide) => {
     slide.classList.remove(
       "active",
       "exit-left",
@@ -248,3 +259,39 @@ prevBtn.addEventListener("click", () => {
   const prevIndex = (current - 1 + slides.length) % slides.length;
   goToSlide(prevIndex, "prev");
 });
+
+carousel.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  },
+  { passive: true }
+);
+
+carousel.addEventListener(
+  "touchend",
+  (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  },
+  { passive: true }
+);
+
+function handleSwipe() {
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+
+  if (Math.abs(deltaX) < swipeThreshold) return;
+
+  if (deltaX < 0) {
+    const nextIndex = (current + 1) % slides.length;
+    goToSlide(nextIndex, "next");
+  } else {
+    const prevIndex = (current - 1 + slides.length) % slides.length;
+    goToSlide(prevIndex, "prev");
+  }
+}

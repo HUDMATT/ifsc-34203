@@ -365,6 +365,7 @@
     black 95%,
     transparent
   );
+  touch-action: pan-y;
 }
 .review-carousel {
   position: relative;
@@ -407,24 +408,24 @@
 }
 @media (min-width: 992px) {
   #reviews-section {
-  grid-column: span 6;
-}
-.review-carousel-wrapper {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-}
+    grid-column: span 6;
+  }
+  .review-carousel-wrapper {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
 }
 
 /*------------------------------- CONTACT SECTION -------------------------*/
@@ -474,10 +475,10 @@
 }
 @media (min-width: 992px) {
   #contact-information {
-  grid-column: 1 / 5;
-  margin-left: 1rem;
+    grid-column: 1 / 5;
+    margin-left: 1rem;
   }
   .form-section {
-  grid-column: 6 / -1;
+    grid-column: 6 / -1;
   }
 }

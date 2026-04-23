@@ -72,6 +72,10 @@
     </symbol>
     <symbol id="isuzu"
             viewBox="0 0 138 50">
+        <polygon fill="currentColor"
+                 fill-rule="evenodd"
+                 clip-rule="evenodd"
+                 points="6.9,36.2 6.9,13.8 0,13.8 0,36.2 6.9,36.2 &#x9;" />
         <path fill="currentColor"
               fill-rule="evenodd"
               clip-rule="evenodd"
