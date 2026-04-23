@@ -1,11 +1,107 @@
-/*------------------------ DROPDOWN LOGIC -----------------------*/
-/* AI did help with this, wanted a similar idea to the bootstrap dropdowns*/
-document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const XLINK_NS = "http://www.w3.org/1999/xlink";
   const menuToggle = document.querySelector(".menu-toggle");
   const mainNav = document.querySelector(".main-nav");
   const dropdownItems = document.querySelectorAll(".has-dropdown");
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
+/*---------------------------- SPRITE LOADING LOGIC --------------------------------------*/
+  function getUseHref(useElement) {
+    return (
+      useElement.getAttribute("href") ||
+      useElement.getAttributeNS(XLINK_NS, "href") ||
+      ""
+    );
+  }
+
+  function setUseHref(useElement, href) {
+    useElement.setAttribute("href", href);
+    useElement.setAttributeNS(XLINK_NS, "xlink:href", href);
+  }
+
+  async function inlineExternalSvgSprites() {
+    const useElements = Array.from(document.querySelectorAll("use"));
+    const externalUses = useElements.filter((useElement) => {
+      const href = getUseHref(useElement);
+      return href.includes(".svg#");
+    });
+
+    if (!externalUses.length) {
+      return;
+    }
+
+    const spriteCache = new Map();
+
+    await Promise.all(
+      externalUses.map(async (useElement) => {
+        const href = getUseHref(useElement);
+        const [spritePath, symbolId] = href.split("#");
+
+        if (!spritePath || !symbolId) {
+          return;
+        }
+
+        if (!spriteCache.has(spritePath)) {
+          const spriteMarkupPromise = fetch(spritePath)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(
+                  `Failed to load SVG sprite: ${spritePath} (${response.status})`,
+                );
+              }
+
+              return response.text();
+            })
+            .then((markup) => {
+              const parser = new DOMParser();
+              const parsedDocument = parser.parseFromString(
+                markup,
+                "image/svg+xml",
+              );
+              const parsedSvg = parsedDocument.documentElement;
+
+              if (!parsedSvg || parsedSvg.nodeName.toLowerCase() !== "svg") {
+                throw new Error(`Invalid SVG sprite markup: ${spritePath}`);
+              }
+
+              const inlineSprite = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "svg",
+              );
+
+              inlineSprite.setAttribute("aria-hidden", "true");
+              inlineSprite.setAttribute("focusable", "false");
+              inlineSprite.style.position = "absolute";
+              inlineSprite.style.width = "0";
+              inlineSprite.style.height = "0";
+              inlineSprite.style.overflow = "hidden";
+
+              Array.from(parsedSvg.childNodes).forEach((childNode) => {
+                inlineSprite.appendChild(
+                  document.importNode(childNode, true),
+                );
+              });
+
+              document.body.prepend(inlineSprite);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+
+          spriteCache.set(spritePath, spriteMarkupPromise);
+        }
+
+        await spriteCache.get(spritePath);
+        setUseHref(useElement, `#${symbolId}`);
+      }),
+    );
+  }
+
+  await inlineExternalSvgSprites();
+
+  /*------------------------ DROPDOWN LOGIC -----------------------*/
+/* AI did help with this, wanted a similar idea to the bootstrap dropdowns*/
   function closeAllDropdowns(except = null) {
     dropdownItems.forEach((item) => {
       if (item !== except) {

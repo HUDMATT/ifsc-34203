@@ -194,11 +194,13 @@ section {
   flex: 1;
 }
 .card-title {
+  margin-top: 0;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-secondary);
 }
 .card-text {
+  margin-top: 0;
   font-size: 0.9rem;
   color: var(--color-secondary-color);
   line-height: 1.5;
@@ -250,8 +252,11 @@ section {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  border: none;
 }
-
+.article-card .card-title {
+  margin-top: 1rem;
+}
 /*---------------------- MAIN HEADER -----------------*/
 #site-header {
   position: sticky;
