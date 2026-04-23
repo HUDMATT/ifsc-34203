@@ -231,6 +231,8 @@ section {
   text-decoration: none;
 }
 .repair-icon {
+  display: block;
+  width: 100%;
   max-width: 50%;
   height: auto;
   color: var(--color-secondary);
@@ -415,6 +417,9 @@ section {
   .mobile-text {
     display: inline;
   }
+  .sm-mobile-text {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
   #main-nav a,
@@ -547,6 +552,11 @@ section {
   text-align: center;
   margin-left: 1rem;
 }
+#hero-section-header h2,
+#hero-section-header p {
+  margin-left: 0;
+  font-size: 1rem;
+}
 #hero-section-header p {
   display: none;
 }
@@ -558,7 +568,6 @@ section {
 #hero-header-container img {
   width: 75px;
   height: auto;
-  margin-left: 1rem;
 }
 @media (min-width: 992px) {
   .section-header {
@@ -573,6 +582,10 @@ section {
     display: block;
     margin-top: -0.5rem;
   }
+  #hero-section-header h2 {
+  margin-left: 0;
+  font-size: 1.25rem;
+}
 }
 
 /*---------------------- HERO SECTION ------------------*/
@@ -730,8 +743,10 @@ section {
   text-decoration: none;
 }
 .brand-logo {
+  display: block;
+  width: 100%;
+  max-width: 180px;
   height: 65px;
-  width: auto;
   color: var(--color-secondary);
   transition:
     transform 0.2s ease,
