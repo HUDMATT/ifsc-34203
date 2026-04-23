@@ -20,7 +20,7 @@ html {
   --color-secondary: #1e3a8a;
   --color-secondary-hover: #0b2572;
 
-  --color-dark-subtle: #9fa6b2;
+  --color-dark-subtle: #d5d9e0;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -135,6 +135,20 @@ section {
 .review-control-icon:hover {
   color: var(--color-secondary-hover);
 }
+.submit-btn {
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background-color: var(--color-secondary-hover);
+}
 
 .learn-more-link {
   display: inline-flex;
@@ -145,8 +159,6 @@ section {
   font-weight: 600;
   font-family: "Oswald", sans-serif;
 }
-
-/*pretty messy, but scoping this right sucked and I wanted to avoid adding extra classes in the HTML*/
 .learn-more-link,
 .nav-list > li > a,
 .nav-list > li > .dropdown-toggle,
@@ -287,7 +299,7 @@ section {
 }
 
 .article-card {
-  background-color: var(--color-secondary-bg);
+  background-color: var(--color-dark-subtle);
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -326,9 +338,9 @@ section {
 .review-card {
   max-width: 325px;
   min-height: 375px;
-  background: var(--color-secondary-bg);
+  background: var(--color-dark-subtle);
   border-radius: 0.75rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-lg);
   padding: 2rem;
   margin-top: 2rem;
   display: flex;
@@ -365,6 +377,56 @@ section {
 .review-link-wrapper {
   align-self: center;
 }
+
+/*------------------------- FORMS ------------------------*/
+.form-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: var(--color-dark-subtle);
+  box-shadow: var(--shadow-lg);
+}
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.form-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-secondary-color);
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border-color);
+  margin-bottom: 1.5rem;
+}
+.service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.form-group input,
+.form-group textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border-color);
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
 /*---------------------- MAIN HEADER -----------------*/
 #site-header {
   position: sticky;
@@ -1028,6 +1090,9 @@ section {
     grid-column: span 6;
     align-items: flex-start;
   }
+  #integrity-experience-text {
+    margin-right: 5rem;
+  }
 }
 /*---------------------------------- REVIEWS SECTION --------------------------*/
 /*had AI help me with this*/
@@ -1118,4 +1183,59 @@ section {
     transparent
   );
 }
+}
+
+/*------------------------------- CONTACT SECTION -------------------------*/
+.contact-divider {
+  width: 100%;
+  border-color: var(--color-muted);
+  grid-column: 1 / -1;
+}
+#contact-content-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+#contact-information {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+#contact-internal-divider {
+  width: 100%;
+  border-color: var(--color-body-color);
+}
+.map-container {
+  aspect-ratio: 21 / 9;
+}
+#contact-information h2,
+#contact-information h3 {
+  color: var(--color-body-color);
+}
+#contact-information p {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 25px;
+  color: var(--color-secondary-color);
+  margin-top: -1rem;
+}
+.contact-link {
+  margin-top: -1rem;
+}
+
+.form-section {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  padding: 0 1rem;
+}
+@media (min-width: 992px) {
+  #contact-information {
+  grid-column: 1 / 5;
+  margin-left: 1rem;
+  }
+  .form-section {
+  grid-column: 6 / -1;
+  }
 }
