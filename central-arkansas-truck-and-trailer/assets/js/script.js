@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dropdownItems = document.querySelectorAll(".has-dropdown");
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
-/*---------------------------- SPRITE LOADING LOGIC --------------------------------------*/
+  /*---------------------------- SPRITE LOADING LOGIC --------------------------------------*/
+  /*copies svg code onto actual HTML if necessary */
   function getUseHref(useElement) {
     return (
       useElement.getAttribute("href") ||
@@ -18,6 +19,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   function setUseHref(useElement, href) {
     useElement.setAttribute("href", href);
     useElement.setAttributeNS(XLINK_NS, "xlink:href", href);
+  }
+
+  function inlineSymbolIntoSvg(svgElement, symbolElement) {
+    const symbolViewBox = symbolElement.getAttribute("viewBox");
+
+    if (symbolViewBox) {
+      svgElement.setAttribute("viewBox", symbolViewBox);
+    }
+
+    svgElement.innerHTML = "";
+
+    Array.from(symbolElement.childNodes).forEach((childNode) => {
+      svgElement.appendChild(document.importNode(childNode, true));
+    });
   }
 
   async function inlineExternalSvgSprites() {
@@ -65,35 +80,30 @@ document.addEventListener("DOMContentLoaded", async () => {
                 throw new Error(`Invalid SVG sprite markup: ${spritePath}`);
               }
 
-              const inlineSprite = document.createElementNS(
-                "http://www.w3.org/2000/svg",
-                "svg",
-              );
-
-              inlineSprite.setAttribute("aria-hidden", "true");
-              inlineSprite.setAttribute("focusable", "false");
-              inlineSprite.style.position = "absolute";
-              inlineSprite.style.width = "0";
-              inlineSprite.style.height = "0";
-              inlineSprite.style.overflow = "hidden";
-
-              Array.from(parsedSvg.childNodes).forEach((childNode) => {
-                inlineSprite.appendChild(
-                  document.importNode(childNode, true),
-                );
-              });
-
-              document.body.prepend(inlineSprite);
+              return parsedDocument;
             })
             .catch((error) => {
               console.error(error);
+              return null;
             });
 
           spriteCache.set(spritePath, spriteMarkupPromise);
         }
 
-        await spriteCache.get(spritePath);
-        setUseHref(useElement, `#${symbolId}`);
+        const parsedDocument = await spriteCache.get(spritePath);
+
+        if (!parsedDocument) {
+          return;
+        }
+
+        const symbolElement = parsedDocument.getElementById(symbolId);
+        const svgElement = useElement.closest("svg");
+
+        if (!symbolElement || !svgElement) {
+          return;
+        }
+
+        inlineSymbolIntoSvg(svgElement, symbolElement);
       }),
     );
   }
@@ -101,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await inlineExternalSvgSprites();
 
   /*------------------------ DROPDOWN LOGIC -----------------------*/
-/* AI did help with this, wanted a similar idea to the bootstrap dropdowns*/
+  /* AI did help with this, wanted a similar idea to the bootstrap dropdowns*/
   function closeAllDropdowns(except = null) {
     dropdownItems.forEach((item) => {
       if (item !== except) {

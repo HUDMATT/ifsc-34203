@@ -291,7 +291,7 @@ section {
   font-weight: 700;
   font-family: "Oswald", sans-serif;
 }
-.main-logo {
+.brand-logo {
   width: 45px;
   height: auto;
   display: block;
@@ -743,7 +743,7 @@ section {
   margin-bottom: 1rem;
   text-decoration: none;
 }
-.brand-logo {
+.truck-logo {
   display: block;
   width: 100%;
   max-width: 180px;
@@ -753,12 +753,12 @@ section {
     transform 0.2s ease,
     color 0.2s ease;
 }
-.brand-logo:hover {
+.truck-logo:hover {
   color: var(--color-secondary-hover);
   transform: scale(1.05);
 }
 @media (min-width: 768px) {
-  .brand-logo {
+  .truck-logo {
     height: 90px;
   }
 }
@@ -774,12 +774,12 @@ section {
     margin-top: auto;
     margin-bottom: auto;
   }
-  .brand-logo {
+  .truck-logo {
     height: 60px;
   }
 }
 @media (min-width: 1400px) {
-  .brand-logo {
+  .truck-logo {
     height: 90px;
   }
 }
